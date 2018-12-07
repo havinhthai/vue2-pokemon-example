@@ -8,8 +8,18 @@
 
         <hr>
 
-        <div class="row">
-          <PokemonBox />
+        <div class="loading-box" v-if="pokemonState.isLoading">
+          <img src="https://vignette.wikia.nocookie.net/central/images/a/af/Tumblr_mjgv8kEuMg1s87n79o1_400.gif/revision/latest?cb=20160524173235"
+               />
+        </div>
+
+        <div class="row" v-else>
+          <PokemonBox
+            v-for="(pokemon, index) in pokemonState.pokemons"
+              :id="index + 1"
+              :pokemon="pokemon"
+              :key="pokemon.name"
+          />
         </div>
       </div>
     </div>
@@ -19,6 +29,7 @@
 <script>
   import store from './store';
   import { GET_POKEMONS } from './store/actionTypes';
+
   import InputSearch from './components/InputSearch';
   import PokemonBox from './components/PokemonBox';
 
@@ -31,6 +42,11 @@
     created() {
       this.$store.dispatch(GET_POKEMONS);
     },
+    computed: {
+      pokemonState: function () {
+        return this.$store.state.pokemonState;
+      },
+    },
   };
 </script>
 
@@ -42,5 +58,12 @@
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+  }
+  .loading-box {
+    text-align: center;
+  }
+  .loading-box img {
+    width: 400px;
+    height: 285px;
   }
 </style>

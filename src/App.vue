@@ -6,6 +6,10 @@
 
         <InputSearch />
 
+        <Alert
+          :isShow="pokemonState.response.isShow"
+          :alertType="pokemonState.response.type"
+          :message="pokemonState.response.message" />
         <hr>
 
         <div class="loading-box" v-if="pokemonState.isLoading">
@@ -32,12 +36,13 @@
 
   import InputSearch from './components/InputSearch';
   import PokemonBox from './components/PokemonBox';
+  import Alert from './components/Alert';
 
   export default {
     name: 'app',
     store,
     components: {
-      InputSearch, PokemonBox,
+      InputSearch, PokemonBox, Alert,
     },
     created() {
       this.$store.dispatch(GET_POKEMONS);

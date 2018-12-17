@@ -1,10 +1,7 @@
 <template>
-  <div id="app" class="container">
     <div class="row">
       <div class="col-12">
-        <h2>Pokedex</h2>
-
-        <router-link to="/homepage">Click me</router-link>
+        <h1>Pokedex</h1>
 
         <router-view />
 
@@ -31,7 +28,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -42,7 +38,7 @@
   import Alert from '../components/Alert';
 
   export default {
-    name: 'app',
+    name: 'Homepage',
     components: {
       InputSearch, PokemonBox, Alert,
     },
@@ -58,14 +54,6 @@
 </script>
 
 <style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
   .loading-box {
     text-align: center;
   }

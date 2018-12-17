@@ -1,6 +1,6 @@
 <template>
   <div class="col-3">
-    <div class="pokemon-intro-box">
+    <div class="pokemon-intro-box text-center">
       <img
         :src="url"
         class="img-fluid">

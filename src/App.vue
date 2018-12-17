@@ -4,6 +4,10 @@
       <div class="col-12">
         <h2>Pokedex</h2>
 
+        <router-link to="/homepage">Click me</router-link>
+
+        <router-view />
+
         <InputSearch />
 
         <Alert
@@ -31,7 +35,6 @@
 </template>
 
 <script>
-  import store from './store';
   import { GET_POKEMONS } from './store/actionTypes';
 
   import InputSearch from './components/InputSearch';
@@ -40,7 +43,6 @@
 
   export default {
     name: 'app',
-    store,
     components: {
       InputSearch, PokemonBox, Alert,
     },

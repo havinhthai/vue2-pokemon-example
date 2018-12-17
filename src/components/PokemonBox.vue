@@ -5,7 +5,9 @@
         :src="url"
         class="img-fluid">
 
-      <h3>{{ pokemon.name }}</h3>
+      <h3>
+        <router-link :to="`/${pokemon.name}`">{{ pokemon.name }}</router-link>
+      </h3>
     </div>
   </div>
 </template>

@@ -3,8 +3,6 @@
       <div class="col-12">
         <h1>Pokedex</h1>
 
-        <router-view />
-
         <InputSearch />
 
         <Alert

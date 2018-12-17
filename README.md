@@ -1,4 +1,4 @@
-# vue-test
+# Pokemon-example
 
 ## Project setup
 ```

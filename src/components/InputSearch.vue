@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import { SEARCH_POKEMONS, GET_POKEMONS } from '../store/actionTypes.js'
+  import { SEARCH_POKEMON, GET_POKEMONS } from '../store/actionTypes.js'
 
   export default {
     name: 'InputSearch',
@@ -35,7 +35,7 @@
           return;
         }
 
-        this.$store.dispatch(SEARCH_POKEMONS, this.keySearch.toLowerCase());
+        this.$store.dispatch(SEARCH_POKEMON, this.keySearch.toLowerCase());
       },
     },
   };

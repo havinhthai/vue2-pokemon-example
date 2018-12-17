@@ -14,9 +14,6 @@ export default new Router({
             name: 'Homepage',
             path: '/',
             component: Homepage,
-            children: [
-               
-            ],
         },
         {
             name: 'About',

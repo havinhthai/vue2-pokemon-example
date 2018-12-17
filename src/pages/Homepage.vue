@@ -11,12 +11,9 @@
           :message="pokemonState.response.message" />
         <hr>
 
-        <div class="loading-box" v-if="pokemonState.isLoading">
-          <img src="https://vignette.wikia.nocookie.net/central/images/a/af/Tumblr_mjgv8kEuMg1s87n79o1_400.gif/revision/latest?cb=20160524173235"
-               />
-        </div>
+        <Loading v-if="pokemonState.isLoading" />
 
-        <div class="row" v-else>
+        <div class="row">
           <PokemonBox
             v-for="(pokemon, index) in pokemonState.pokemons"
               :id="index + 1"
@@ -33,12 +30,13 @@
 
   import InputSearch from '../components/InputSearch';
   import PokemonBox from '../components/PokemonBox';
+  import Loading from '../components/Loading';
   import Alert from '../components/Alert';
 
   export default {
     name: 'Homepage',
     components: {
-      InputSearch, PokemonBox, Alert,
+      InputSearch, PokemonBox, Alert, Loading,
     },
     created() {
       this.$store.dispatch(GET_POKEMONS);
@@ -50,13 +48,3 @@
     },
   };
 </script>
-
-<style>
-  .loading-box {
-    text-align: center;
-  }
-  .loading-box img {
-    width: 400px;
-    height: 285px;
-  }
-</style>

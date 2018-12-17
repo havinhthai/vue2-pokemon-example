@@ -57,7 +57,7 @@ export default {
       state.response = {
         isShow: true,
         type: 'success',
-        message: 'Get pokemon success',
+        message: 'Get pokemons success',
       };
 
       state.pokemons = [pokemon];

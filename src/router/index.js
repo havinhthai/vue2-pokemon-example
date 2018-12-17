@@ -3,7 +3,7 @@ import Router from 'vue-router';
 
 import Homepage from '../pages/Homepage.vue';
 import About from '../pages/About.vue';
-import Profile from '../pages/Profile.vue';
+import Detail from '../pages/Detail.vue';
 
 Vue.use(Router);
 
@@ -21,9 +21,9 @@ export default new Router({
             component: About,
         },
         {
-            name: 'Profile',
-            path: '/:id',
-            component: Profile,
+            name: 'Detail',
+            path: '/pokemon/:id',
+            component: Detail,
         },
     ],
 });
